@@ -27,4 +27,4 @@ Neste repositório você verá duas pastas, conforme abaixo:
 * **TemplateInspiniaOriginal**: Pasta que armazena o código-fonte original do template HTML do INSPINIA, template este utilizado como base para o template ASP NET da IT Lab (você utilizará este apenas como referência para extrair algum componente HTML que ainda não esteja presente no Template ASP NET IT Lab).
 
 # Setup de um novo projeto
-Para criar um novo projeto baseado no template, siga os passos indicados no gui clicando aqui.
+Para criar um novo projeto baseado no template, siga os passos indicados no gui clicando [aqui](Setup-New-Project.md).
