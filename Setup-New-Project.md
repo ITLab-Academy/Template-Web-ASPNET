@@ -54,9 +54,9 @@ Antes de mais nada, restaure os pacotes que o template utiliza através do NuGet
 
 
 ## Setup do Banco de Dados
-### Se você não tem um banco de dados criado
+### Se você não tem um banco de dados criado (texto em construção)
 Se você ainda não tem um banco de dados criado, você pode criar o novo banco de dados para o seu projeto de duas formas:
 1. Criar o banco de dados através do **Migrations** do Entity Framework.
 2. Criar o banco de dados através do **Project DataBase**.
 
-### Se você já tem um banco de dados criado
+### Se você já tem um banco de dados criado (texto em construção)
