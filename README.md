@@ -12,8 +12,8 @@ Clique [Aqui](Welcome.md) e leia as orientações para os iniciantes neste repos
     * Bootstrap v3.3.6
     * jQuery v.2.1.4
 * **Back-End**:
-    * .NET Framework v4.5.2
-    * C# 5.0
+    * .NET Framework v4.6.2
+    * C# 6.0
     * ASP.NET MVC v5.2.3.0
     * Entity Framework v6.0
 
