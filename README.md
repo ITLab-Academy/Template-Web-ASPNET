@@ -24,7 +24,7 @@ Sempre utilize a versão da **Branch Trunk**, ela é a última versão estável!
 
 Neste repositório você verá duas pastas, conforme abaixo:
 * **ITLabTemplateApi**: Pasta que armazena o código-fonte do template (é este que você vai utilizar para criar novas aplicações).
-* **TemplateInspiniaOriginal**: Pasta que armazena o código-fonte original do template HTML do INSPINIA, template este utilizado como base para o template ASP NET da IT Lab (você utilizará este apenas como referência para extrair algum componente HTML que ainda não esteja presente no Template ASP NET IT Lab).
+* **TemplateInspiniaOriginal**: Pasta que armazena o código-fonte original do template HTML do INSPINIA, template este utilizado como base para o template ASP NET da IT Lab (você utilizará este apenas como referência para extrair algum componente HTML que ainda não esteja presente no Template ASP NET IT Lab). O template Web ASP NET IT Lab foi construído em cima da **versão 2.2 do Template INSPINIA**.
 
 # Setup de um novo projeto
 Para criar um novo projeto baseado no template, siga os passos indicados no guia clicando [aqui](Setup-New-Project.md).
