@@ -30,4 +30,4 @@ Neste repositório você verá duas pastas, conforme abaixo:
 Para criar um novo projeto baseado no template, siga os passos indicados no guia clicando [aqui](Setup-New-Project.md).
 
 # Estilo e padrões para codificação - Javascript
-Antes de iniciar o desenvolvimento, leia o guia de **Estilo e padrões para codificação - Javascript** clicando [aqui](pattenrs\Javascript.md), além de se familiarizar com o código pré-existente, sempre siga o mesmo estilo e padrões sugeridos.
+Antes de iniciar o desenvolvimento, leia o guia de **Estilo e padrões para codificação - Javascript** clicando [aqui](Pattenrs\Javascript.md), além de se familiarizar com o código pré-existente, sempre siga o mesmo estilo e padrões sugeridos.
