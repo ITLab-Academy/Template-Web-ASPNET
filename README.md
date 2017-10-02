@@ -29,5 +29,8 @@ Neste repositório você verá duas pastas, conforme abaixo:
 # Setup de um novo projeto
 Para criar um novo projeto baseado no template, siga os passos indicados no guia clicando [aqui](Setup-New-Project.md).
 
+# Tradução dos termos exibidos pelo sistema
+Para criar novos termos e suas traduções e/ou alterar a tradução de termos existentes, leia o guia clicando [aqui](Dictionary.md).
+
 # Estilo e padrões para codificação - Javascript
 Antes de iniciar o desenvolvimento, leia o guia de **Estilo e padrões para codificação - Javascript** clicando [aqui](Pattners/Javascript.md), além de se familiarizar com o código pré-existente, sempre siga o mesmo estilo e padrões sugeridos.
