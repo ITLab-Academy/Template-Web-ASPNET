@@ -10,8 +10,16 @@
   - **Nome de Variáveis e Funções:** Utilizar o padrão **camelCase** (1ª letra maiúscula da 1ª palavra minúscula e iniciais das demais palavras maiúscula) e sempre iniciando com letras, exemplo: `firstName`   (não utilizar utilizar ~~`FirstName`~~ / ~~`Firstname`~~ / ~~`firstname`~~ / ~~`3firstName`~~).
   - **Espaço entre os operadores:** Sempre utilizar espaços entre os operadores, exemplo `var soma = x + y;`  (não utilizar ~~`var soma = x+y;`~~.
   - **Sentenças Simples:** (como: objeto)
-    - **Ponto-e-vírgula:** Sempre concluir as sentenças SIMPLES com ponto-e-vírgula, exemplo `var colors = ['Red', 'Blue'];`.
-    - **Propriedade/Valor:** Utilizar o dois-pontos (:) colado ao nome da propriedade e inserir um espaço entre o dois-pontos (:) e o valor.
+    - **Ponto-e-vírgula:** Sempre concluir as sentenças SIMPLES com ponto-e-vírgula, exemplo:
+       ```javascript
+       var colors = ['Red', 'Blue'];
+       ```
+    - **Propriedade/Valor:** Utilizar o dois-pontos (:) colado ao nome da propriedade e inserir um espaço entre o dois-pontos (:) e o valor, exemplo:
+       ```javascript
+       var cliente = {
+           nome: 'José'
+       }
+       ```
   - **Sentenças Complexas:**  (como: Funções / Loop / Condicionais)
     - **Ponto-e-vírgula:** Nunca concluir as sentenças COMPLEXAS com ponto-e-vírgula, exemplo:
 
@@ -24,7 +32,7 @@ function toCelsius(fahrenheit) {
     - **Sentenças compostas:**
       - Colocar abertura de chaves no final da 1ª linha: `{`.
       - Inserir um espaço em branco antes das chaves: `var person = {`.
-      - Colocar fechamento de chaves em uma nova linha.
+      - Colocar fechamento de chaves ao final da sentençã em uma nova linha.
 
 **Exemplos sugeridos:**
 

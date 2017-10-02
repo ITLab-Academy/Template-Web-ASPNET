@@ -38,7 +38,7 @@ Para gerar os arquivos .json você precisa atender os requisitos abaixo:
   2. Navegue até a raiz da pasta que armazena o projeto **.Web** (pasta em que se encontra o arquivo **package.json**).
   3. Execute o comando:
   ```bash
-  node install
+  npm install
   ```
 - Que já existam as pastas que vão armazenar os arquivos .json por idioma dentro da pasta **locales**.
 - Que você realize o check-out de TODAS as pastas que armazenam .json.
