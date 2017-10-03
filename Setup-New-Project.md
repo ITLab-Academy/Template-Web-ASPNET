@@ -82,7 +82,7 @@ Por padrão a solução vem configurada para o modo **Protótipo**, veja abaixo 
 <script src="app/core/services/commons.service.prototype.js"></script> <!-- Serviços/Funções comuns a maioria das funcionalidades do sistema -->
 <script src="app/core/pages/notifications/list.service.prototype.js"></script> <!-- Serviço que prove as notificações ao usuário -->
 ```
-2. Arquivo `/app/app.route.js`, neste arquivo você pode configurar o modo **Protótipo** x **Desenvolvimento** por funcionalidade, referenciando o arquivo com sufixo `.service.prototype.js` ou sem o sufixo `.service.prototype.js`, por exemplo, o no trecho abaixo, responsável pela tela de edição de usuários, estamos utilizando no modo **Protótipo**: 
+2. Arquivo `/app/app.route.js`, neste arquivo você pode configurar o modo **Protótipo** x **Desenvolvimento** por funcionalidade, referenciando o arquivo com sufixo (`.service.prototype.js`) ou sem o sufixo (`.service.js`), por exemplo: no trecho abaixo, responsável pela tela de edição de usuários, estamos utilizando no modo **Protótipo**: 
 ```javascript 
 files: [
     'app/core/pages/dataVisibility/crud.service.prototype.js',  //COM o sufixo .service.prototype.js
