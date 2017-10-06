@@ -109,31 +109,7 @@ files: [
 <script src="app/core/services/authentication.service.prototype.js"></script> <!-- Serviço/Funções responsável pela autenticação do usuário e informações sobre sua autenticação -->
 ```
 
-## Controle de versão do banco de dados (TEXTO AINDA EM CONSTRUÇÃO)
-É possível realizar o controle de versão do banco de dados de duas formas:
-1. Através do [**Entity Framework Migrations**](https://imasters.com.br/framework/dotnet/como-usar-entity-framework-migrations/?trace=1519021197&source=single).
-2. Através do [**Project DataBase**](https://msdn.microsoft.com/en-us/library/xee70aty(v=vs.100).aspx).
+Como mencionado anteriormente, por padrão a solução vem configurada para o modo **Protótipo**, desta forma você já conseguirá construir o protótipo do novo sistema utilizando HTML/CSS/Javascript (Telas / **Front-End**), sem a necessidade de ter um **Back-End** (APIs e acesso a banco de dados), para isso basta iniciar apenas o projeto **\*.Web** (botão direito do mouse em cima do nome do projeto > Set as StartUp Project), neste momento não é necessário iniciar o projeto **\*.Api**.
 
-### Controlar a versão do banco de dados com o Entity Framework Migrations
-Basicamente, ao utilizar o Entity Framework Migrations para controlar a versão do banco de dados, os scripts para criar, alterar e excluir objetos e dados do banco de dados são gerados e versionados pelo Entity Framework à partir do código C#.
-
-O template está configurado por padrão para não realizar nenhuma ação contra o banco de dados ao inicializar o sistema (veja mais sobre as estratégias de inicialização do banco de dados [clicando aqui](http://www.entityframeworktutorial.net/code-first/database-initialization-strategy-in-code-first.aspx)), isso significa que, quando quiser atualizar o banco de dados você deverá executar os comandos do Entity Framework Migrations manualmente através do **Package Manager Console**.
-
-No projeto **\<nome-projeto\>.Api** temos uma pasta chamada **Migrations**, é nesta pasta que ficam os arquivos utilizados pelo Entity Framework Migrations, nela temos os seguintes arquivos:
-- **Configuration.cs**: Arquivo responsável pela configuração do Migrations, a única coisa que você precisa definir neste arquivo é em qual ambiente o Migrations será executando, podendo ser:
-  - **Desenvolvimento Local**: Defina este ambiente caso você rode o Migrations contra uma base de dados local, no seu computador. Neste caso o Migrations **IRÁ CRIAR** uma role no seu banco de dados, é neste role que serão dadas as permissões.
-  - **Homologação IT Lab**: Defina este ambiente caso você rode o Migrations contra uma base de dados que estiver no servidor de desenvolvimento/homologação da IT Lab. Neste caso o Migrations **NÃO IRÁ CRIAR** uma role no banco de dados do servidor de desenvolvimento/homologação da IT Lab pois ela provavelmente já deverá existir, criada quando o banco de dados foi criado (caso não exista, crie manualmente).
-  
-  **IMPORTANTE:** Recomenda-se que as permissões aos objetos do banco de dados sejam dadas à roles e não diretamente aos objetos.
-
-    Defina o ambiente na linha de código abaixo:
-```csharp
-//Define o ambiente para o qual se executará o migrations
-Environment.EnvironmentTpe = Environment.Type.DesenvolvimentoLocal;
-```
-  
-
-<img src="images/Migrations.png">
-
-### Controlar a versão do banco de dados com o Project DataBase
-Ao utilizar o Project DataBase, os scripts para criar, alterar e excluir objetos e dados do banco de dados são versionados em arquivos de scripts SQL no projeto **\<nome-projeto\>.Database**.
+Com a aprovação do protótipo e início do desenvolvimento do sistema como um todo, será necessário programar também o **Back-End** (APIs e acesso a banco de dados), quando chegar neste momento você precisará iniciar os dois projetos e principalmente realizar o setup do banco de dados.
+Para realizar o setup do banco de dados, primeiramente você deverá decidir sobre qual o mecanismo você utilizará para controlar a versão do banco de dados, [clique aqui](DataBase-Version-Control.md) e leia a documentação que explica os possíveis métodos de controle de versão (**Migrations** e **Project Database**) e como realizar o setup do banco de dados.

@@ -29,6 +29,9 @@ Neste repositório você verá duas pastas, conforme abaixo:
 # Setup de um novo projeto
 Para criar um novo projeto baseado no template, siga os passos indicados no guia clicando [aqui](Setup-New-Project.md).
 
+# Controle de versão do banco de dados
+Para realizar o controle de versão do banco de dados, opte por um dos métodos indicados [aqui](DataBase-Version-Control.md).
+
 # Tradução dos termos exibidos pelo sistema
 Para criar novos termos e suas traduções e/ou alterar a tradução de termos existentes, leia o guia clicando [aqui](Dictionary.md).
 
