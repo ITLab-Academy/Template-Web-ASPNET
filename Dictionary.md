@@ -34,14 +34,15 @@ Uma vez criado o arquivo .txt, basta gerar os arquivos .json para cada idioma, u
 Para gerar os arquivos .json você precisa atender os requisitos abaixo:
 - Que você tenha o **NodeJs** e **NPM** instalados em seu computador.
 - Que os pacotes do node, responsáveis por criar os arquivos .json à partir dos arquivos .txt, estejam instalados. Para instalar estes pacotes siga os passos abaixo:
-  1. Vá até o prompt de comando.
-  2. Navegue até a raiz da pasta que armazena o projeto **.Web** (pasta em que se encontra o arquivo **package.json**).
-  3. Execute o comando:
+  1. Dê um **Check Out for Edit** nos arquivos: **package.json** e **package-lock.json** que estão na raiz do projeto **\*.Web**.
+  2. Vá até o prompt de comando.
+  3. Navegue até a raiz da pasta que armazena o projeto **\*.Web** (pasta em que se encontra o arquivo **package.json**).
+  4. Execute o comando:
   ```bash
   npm install
   ```
 - Que já existam as pastas que vão armazenar os arquivos .json por idioma dentro da pasta **locales**.
-- Que você realize o check-out de TODAS as pastas que armazenam .json.
+- Que você realize o **Check Out for Edit** de TODAS as pastas que armazenam .json.
 
 Tendo os pré-requisitos acima atendidos, siga os passo abaixo:
 1. Abra o prompt de comando.
