@@ -35,5 +35,9 @@ Para realizar o controle de versão do banco de dados, opte por um dos métodos 
 # Tradução dos termos exibidos pelo sistema
 Para criar novos termos e suas traduções e/ou alterar a tradução de termos existentes, leia o guia clicando [aqui](Dictionary.md).
 
+# Cache dos arquivos do Front-End
+Por padrão os navegadores realizam o cache dos arquivos de Front-End (HTML/CSS/Javascript), este comportamento pode atrapalhar o desenvolvedor durante o processo de desenvolvimento.
+Leia o guia que explica como controlar o cache dos arquivos de Front-End clicando [aqui](FrontEnd-Cache.md).
+
 # Estilo e padrões para codificação - Javascript
 Antes de iniciar o desenvolvimento, leia o guia de **Estilo e padrões para codificação - Javascript** clicando [aqui](Pattners/Javascript.md), além de se familiarizar com o código pré-existente, sempre siga o mesmo estilo e padrões sugeridos.
