@@ -2,9 +2,10 @@
 
 Por padrão os navegadores realizam o cache dos arquivos de Front-End (HTML/CSS/Javascript), este comportamento pode atrapalhar o desenvolvedor durante o processo de desenvolvimento, onde o navegador poderá não exibir mudanças realizadas nestes arquivos.
 
-Você pode controlar este comportamento de duas formas:
+Você pode controlar este comportamento de três formas:
 1. Utilizando o controle de cache do navegador.
 2. Utilizando o controle de cache do template.
+3. Abrindo o navegador em modo anônimo.
 
 ## 1. Controle de cache no navegador
 Esta é a forma mais eficiente para o desenvolvedor controlar se os arquivos do Front-End deverão ou não serem carregados do cache.
@@ -48,4 +49,8 @@ Para estes casos você deve manualmente alterar a referência ao arquivo incluin
 ```html
 <script src="app/app.routes.js?v2"></script>
 ```
+
+## 3. Navegador modo anônimo
+Outra forma eficiente de evitar que o navegador carregue os arquivos Front-End do cache é abrir o navegador em modo anônimo, ao abrir o navegador neste modo o cache existente é ignorado ao carregador os arquivos, com isso um novo contexto de cache é criado pelo navegador para a sessão atual aberta em modo anônimo.
+Ao alterar os arquivos, **caso o navegador já esteja aberto em modo anônimo**, como ele criou um novo contexto de cache guardando neste contexto os arquivos abertos pela última vez, para evitar que o cache seja carregado você deve fechar e abrir novamente o navegador em modo anônimo.
 
