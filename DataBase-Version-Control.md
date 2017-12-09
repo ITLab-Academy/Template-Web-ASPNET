@@ -67,9 +67,9 @@ Para criar um novo banco de dados utilizando o Migrations, siga os passos abaixo
 2. Abra o **Package Manager Console** (Tools > NuGet Package Manager > Package Manager Console).
 3. No **Package Manager Console** digite o comando:
 ```bash
-update-database -StartUpProjectName <nome-projeto>.Api --verbose
+update-database -StartUpProjectName <nome-projeto>.Api -verbose
 ```
-    O comando acimaexecutará contra o banco de dados os scripts SQL gerados pelo **Migrations** do projeto **\*.Api**, exibindo no console o andamento e scripts que estão sendo executandos (--verbose). Caso o banco de dados não exista, o **Migrations** irá criá-lo automaticamente.
+    O comando acimaexecutará contra o banco de dados os scripts SQL gerados pelo **Migrations** do projeto **\*.Api**, exibindo no console o andamento e scripts que estão sendo executandos (-verbose). Caso o banco de dados não exista, o **Migrations** irá criá-lo automaticamente.
   
   Como mencionado anteriormente, os scripts SQL serão gerados automaticamente pelo **Migrations** à partir do código C#, neste primeiro momento ele executará apenas os dois **Migrations** que já vem com o template, na ordem abaixo:
   - Arquivo **XXXXX_Initialize-Database.cs**: Cria os objetos SQL iniciais.
@@ -95,7 +95,7 @@ Ao executar o comando acima o **Migrations** entenderá todas as mudanças reali
 
 Após criado o **Migrations** que representa a mudança, basta executá-lo contra o banco de dados, imaginando que o banco de dados já foi criado com os objetos iniciais (passos explicados anteriormente), basta executar o comando abaixo no **Package Manager Console**:
 ```bash
-update-database -StartUpProjectName <nome-projeto>.Api --TargetMigration:Novo-campo --verbose
+update-database -StartUpProjectName <nome-projeto>.Api -TargetMigration:Novo-campo -verbose
 ```
 
 O comando ``update-database`` tem como objetivo atualizar o banco de dados conforme os parâmentros passados para ele, no caso do comando acima, ele atualizará o banco de dados para refletir TODAS as mudanças de estrutura de dados até chegar na mudança alvo, que neste caso é a **Novo-Campo**. Para fazer isso, primeiramente o **Migrations** avalia o banco de dados para saber quais mudanças já estão aplicadas no banco de dados, depois disso ele executará SOMENTE os **Mirgrations** até chegar no indicado no parâmetro ``-TargetMigration:``.
@@ -108,12 +108,12 @@ Exemplo: Imagine o cenário onde você tenha os três **Migrations** no projeto 
  
 Ao executar o comando abaixo, todos os **Migrations** acima serão executados, na ordem em que foram criados, até chegar no **Migration** alvo que é ``Novo-Campo``.
 ```bash
-update-database -StartUpProjectName <nome-projeto>.Api --TargetMigration:Novo-campo --verbose
+update-database -StartUpProjectName <nome-projeto>.Api -TargetMigration:Novo-campo -verbose
 ```
 
 No mesmo cenário acima, caso seja executado o comando abaixo, serão executados somente os **Migrations** criados até o alvo indicado que é  ``InitialPermission``, ou seja, somente os migrations ``Initialize-Database`` e ``InitialPermission`` serão executados.
 ```bash
-update-database -StartUpProjectName <nome-projeto>.Api --TargetMigration:InitialPermission --verbose
+update-database -StartUpProjectName <nome-projeto>.Api -TargetMigration:InitialPermission -verbose
 ```
 
 ## Controlar a versão do banco de dados com o Project DataBase (TEXTO AINDA EM CONSTRUÇÃO)
