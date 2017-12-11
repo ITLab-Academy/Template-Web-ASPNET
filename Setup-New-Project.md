@@ -33,7 +33,6 @@ Antes de continuarmos, vamos entender como a solução está estruturada, na pas
 Através deste projeto você pode manter o controle de versão para todos os seus objetos do SQL Server, tais como: Tabelas, Stored Procedures e Views.
 <br>Também é recomendado que você mantenha neste projeto os scripts [T-SQL](https://pt.wikipedia.org/wiki/Transact-SQL) de alteração de banco de dados para cada nova versão, isso facilitará o deploy para cada versão da aplicação.
 
-
 ## Possíveis cenários para execução do sistema
 Da forma como a solução está estruturada, temos dois possíveis cenários para executar o sistema:
 

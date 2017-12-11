@@ -17,6 +17,15 @@ Clique [Aqui](Welcome.md) e leia as orientações para os iniciantes neste repos
     * ASP.NET MVC v5.2.3.0
     * Entity Framework v6.0
 
+# Ferramentas para desenvolvimento:
+    * Visual Studio 2015 (ou superior) - https://www.visualstudio.com/pt-br/downloads/
+    * SQL Server Express 2016 (ou superior) - https://www.microsoft.com/en-us/download/details.aspx?id=54284
+    * SQL Server Data Tools (SSDT) - https://docs.microsoft.com/pt-br/sql/ssdt/download-sql-server-data-tools-ssdt
+    * NodeJs + NPM - https://nodejs.org/en/
+
+# Problemas conhecidos
+Existe uma seção nesta documentação que lista os principais problemas conhecidos que os desenvolvedores passam ao realizar o desenvolvimento utilizando o Template Web ASP NET API da IT Lab, caso tenha problemas, verifique se ele já não está com a solução documentada nesta seção, [clicando aqui](known-issues.md).
+
 # Código-fonte do Template Web ASP NET
 O código-fonte do Template não fica no GitHub, fica no TFS da IT Lab no endereço abaixo:
     __$/ITLab.TemplateWebApi/Trunk/src__<br>
