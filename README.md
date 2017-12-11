@@ -40,4 +40,4 @@ Por padrão os navegadores realizam o cache dos arquivos de Front-End (HTML/CSS/
 Leia o guia que explica como controlar o cache dos arquivos de Front-End clicando [aqui](FrontEnd-Cache.md).
 
 # Estilo e padrões para codificação - Javascript
-Antes de iniciar o desenvolvimento, leia o guia de **Estilo e padrões para codificação - Javascript** clicando [aqui](Pattners/Javascript.md), além de se familiarizar com o código pré-existente, sempre siga o mesmo estilo e padrões sugeridos.
+Antes de iniciar o desenvolvimento, leia o guia de **Estilo e padrões para codificação - Javascript** clicando [aqui](patterns/Javascript.md), além de se familiarizar com o código pré-existente, sempre siga o mesmo estilo e padrões sugeridos.
