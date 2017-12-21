@@ -21,7 +21,7 @@
 ## Execução do sistema em browser Safari no iPad/iPhone
 <strong>4. Problemas ao executar o sistema no browser Safari no iPad/iPhone</strong>
 
-<strong>Sintoma:</strong> Ao executar o sistema no browser Safari no iPad/iPhone o sistema não executa corretamente, podendo apresentar a mensagem abaixo no lugar das mensagens provindas do dicionário (ex: labels):
+<strong>Sintoma:</strong> Ao executar o sistema no browser Safari no iPad/iPhone o mesmo não é executado corretamente, podendo apresentar a mensagem abaixo no lugar das mensagens provindas do dicionário (ex: labels):
 ```html
 {{translation()}}
 ``` 
@@ -30,6 +30,6 @@
 ```html
 SyntaxError: Unexpected keyword 'const'. Const declarations are not supported in strict mode. 
 ```
-<strong>Causa:</strong> Utilização da keyword 'const' no Javascript em strict mode.
-<br><strong>Solução:</strong> Não utilize a keyword 'const', utilize 'var'
+<strong>Causa:</strong> Utilização da keyword <strong>'const'</strong> no Javascript em strict mode.
+<br><strong>Solução:</strong> Não utilize a keyword <strong>'const'</strong>, utilize <strong>'var'</strong>
 <br><strong>IMPORTANTE:</strong> O Template Web da IT Lab à partir da versão 2.1 já não utiliza mais a keyword 'const' no Javascript, as versões anteriores do template podem apresentar este problema, neste caso basta aplicar a solução descrita acima.
