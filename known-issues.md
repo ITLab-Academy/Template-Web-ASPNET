@@ -31,5 +31,5 @@
 SyntaxError: Unexpected keyword 'const'. Const declarations are not supported in strict mode. 
 ```
 <strong>Causa:</strong> Utilização da keyword <strong>'const'</strong> no Javascript em strict mode.
-<br><strong>Solução:</strong> Não utilize a keyword <strong>'const'</strong>, utilize <strong>'var'</strong>
+<br><strong>Solução:</strong> Não utilize a keyword <strong>'const'</strong>, utilize <strong>'var'</strong>.
 <br><strong>IMPORTANTE:</strong> O Template Web da IT Lab à partir da versão 2.1 já não utiliza mais a keyword 'const' no Javascript, as versões anteriores do template podem apresentar este problema, neste caso basta aplicar a solução descrita acima.
