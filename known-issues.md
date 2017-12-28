@@ -4,19 +4,22 @@
 <br><img src="images/error-sql-server-express-missing.png">
 
 <strong>Causa:</strong> Falta do SQL Server Express 2016 na máquina do desenvolvedor.
-<br><strong>Solução:</strong> Instale o SQL Server Express 2016 (ou superior) https://www.microsoft.com/en-us/download/details.aspx?id=54284
+
+<strong>Solução:</strong> Instale o SQL Server Express 2016 (ou superior) https://www.microsoft.com/en-us/download/details.aspx?id=54284
 
 <br><br>
 <strong>2. Ao abrir a solução, tenho a mensagem de erro abaixo: (SSDT)</strong>
 <br><img src="images/error-ssdt-missing.png">
 
 <strong>Causa:</strong> Falta do SSDT (SQL Server Data Tools) na máquina do desenvolvedor.
-<br><strong>Solução:</strong> Instale o SSDT na máquina do desenvolvedor. https://docs.microsoft.com/pt-br/sql/ssdt/download-sql-server-data-tools-ssdt
+
+<strong>Solução:</strong> Instale o SSDT na máquina do desenvolvedor. https://docs.microsoft.com/pt-br/sql/ssdt/download-sql-server-data-tools-ssdt
 
 <br><br>
 <strong>3. Após abrir a solução, um ou mais projetos ficam marcados com o erro <strong>(load failed)</strong> ao lado do nome da solução e com isso o projeto não abre.</strong>
 <br><strong>Causa:</strong> Falta do SSDT (SQL Server Data Tools) e/ou SQL Server Express 2016.
-<br><strong>Solução:</strong> Instale o SSDTe SQL Server Express 2016 na máquina do desenvolvedor.
+
+<strong>Solução:</strong> Instale o SSDTe SQL Server Express 2016 na máquina do desenvolvedor.
 
 ## Browsers/Navegadores
 <strong>4. Problemas ao executar o sistema no browser Safari no iPad/iPhone</strong>
@@ -31,9 +34,11 @@
 SyntaxError: Unexpected keyword 'const'. Const declarations are not supported in strict mode. 
 ```
 <strong>Causa:</strong> Utilização da keyword <strong>'const'</strong> no Javascript em strict mode.
-<br><strong>Solução:</strong> Não utilize a keyword <strong>'const'</strong>, utilize <strong>'var'</strong>.
+
+<strong>Solução:</strong> Não utilize a keyword <strong>'const'</strong>, utilize <strong>'var'</strong>.
 <br><strong>IMPORTANTE:</strong> O Template Web da IT Lab à partir da versão 2.1 já não utiliza mais a keyword 'const' no Javascript, as versões anteriores do template podem apresentar este problema, neste caso basta aplicar a solução descrita acima.
 
+<br><br>
 <strong>5. Problemas ao executar o sistema no browser Internet Explorer 11 (IE 11) no modo protótipo</strong>
 
 <strong>Sintoma:</strong> Ao executar o sistema no browser Internet Explorer 11 no modo protótipo a autenticação não ocorre, podendo deixar a tela congelada e apresentar a seguinte mensagem de erro no console do Developer Tools do browser:
@@ -43,8 +48,9 @@ SyntaxError: Unexpected keyword 'const'. Const declarations are not supported in
 Expected identifier, string or number
 authentication.service.prototype.js (147,13)
 ```
-<strong>Causa:</strong> Utilização do colchetes "[ ]" para declarar propriedade, cujo nome tem caracteres especiais, em objeto no javascript (não suportado no IE).
-<br><strong>Solução:</strong> Não utilize cochetes "[ ]" para declarar propriedade em objeto no javascript.
+<strong>Causa:</strong> Utilização do colchetes "[ ]" para declarar propriedade, onde o nome tem caracteres especiais, em objeto no javascript.
+
+<strong>Solução:</strong> Não utilize cochetes "[ ]" para declarar propriedade em objeto no javascript.
 <br>Troque o trecho de código abaixo no arquivo <strong>*.Web/app/core/services/authentication.service.prototype.js</strong>
 ```javascript
         var itemPrototype = {
@@ -71,13 +77,14 @@ Pelo trecho de código:
 ```
 <br><strong>IMPORTANTE:</strong> O Template Web da IT Lab à partir da versão 2.4 já traz esta correção, as versões anteriores do template podem apresentar este problema, neste caso basta aplicar a solução descrita acima.
 
+<br><br>
 <strong>6. Dados não são atualizados na tela após cadastrar ou alterar um registro utilizando o browser Internet Explorer 11 (IE 11).</strong>
 
 <strong>Sintoma:</strong> Ao cadastrar ou alterar um registro, utilizando o browser Internet Explorer 11, os dados não são atualizados na tela, mesmo após acionar o F5 do browser.
 
 <strong>Causa:</strong> O Internet Explorer 11, por padrão, realiza cache de requisições AJAX utilizando o método GET.
 
-<br><strong>Solução:</strong> Instrua o browser a não realizar cache para requisições AJAX utilizando o método GET.
+<strong>Solução:</strong> Instrua o browser a não realizar cache para requisições AJAX utilizando o método GET.
 <br>No arquivo <strong>*.Web/app/core/services/apiInterceptor.service.js</strong> na função <strong>function request(config)</strong> logo acima da linha:
 ```javascript
 config.headers['Accept'] = 'application/json';
