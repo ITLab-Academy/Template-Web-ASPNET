@@ -1,5 +1,6 @@
 # Template Web ASP NET IT Lab
-Repositório utilizado para registrar e controlar as issues do Template Web ASP NET da IT Lab.
+Repositório utilizado para documentar o Template Web ASP NET da IT Lab.
+Versão atual do template: 3.0 (03/Janeiro/2018).
 
 # 1ª vez neste repositório?
 Clique [Aqui](Welcome.md) e leia as orientações para os iniciantes neste repositório.
@@ -24,7 +25,7 @@ Clique [Aqui](Welcome.md) e leia as orientações para os iniciantes neste repos
     * NodeJs + NPM - https://nodejs.org/en/
 
 # Problemas conhecidos
-Existe uma seção nesta documentação que lista os principais problemas conhecidos que os desenvolvedores passam ao realizar o desenvolvimento utilizando o Template Web ASP NET API da IT Lab, caso tenha problemas, verifique se ele já não está com a solução documentada nesta seção, [clicando aqui](known-issues.md).
+Existe uma seção nesta documentação que lista os principais problemas conhecidos que os desenvolvedores passam (ou passaram em versões anteriores) ao realizar o desenvolvimento utilizando o Template Web ASP NET API da IT Lab, caso tenha problemas, verifique se ele já não está com a solução documentada nesta seção, [clicando aqui](known-issues.md).
 
 # Código-fonte do Template Web ASP NET
 O código-fonte do Template não fica no GitHub, fica no TFS da IT Lab no endereço abaixo:
@@ -33,7 +34,7 @@ Sempre utilize a versão da **Branch Trunk**, ela é a última versão estável!
 
 Neste repositório você verá duas pastas, conforme abaixo:
 * **ITLabTemplateApi**: Pasta que armazena o código-fonte do template (é este que você vai utilizar para criar novas aplicações).
-* **TemplateInspiniaOriginal**: Pasta que armazena o código-fonte original do template HTML do INSPINIA, template este utilizado como base para o template ASP NET da IT Lab (você utilizará este apenas como referência para extrair algum componente HTML que ainda não esteja presente no Template ASP NET IT Lab). O template Web ASP NET IT Lab foi construído em cima da **versão 2.2 do Template INSPINIA**.
+* **TemplateInspiniaOriginal**: Pasta que armazena o código-fonte original do template HTML do INSPINIA, template este utilizado como base para o template Web ASP NET da IT Lab (você utilizará este apenas como referência para extrair algum componente HTML que ainda não esteja presente no Template Web ASP NET IT Lab). O template Web ASP NET IT Lab foi construído em cima da **versão 2.2 do Template INSPINIA**.
 
 # Setup de um novo projeto
 Para criar um novo projeto baseado no template, siga os passos indicados no guia clicando [aqui](Setup-New-Project.md).

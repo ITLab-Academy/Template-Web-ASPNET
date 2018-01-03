@@ -53,12 +53,33 @@ Da forma como a solução está estruturada, temos dois possíveis cenários par
     - **Back-End**: End-Point http://localhost:8081 
 - Por questões de segurança, no **AMBIENTE DE PRODUÇÃO**, é recomendado que o Back-End e Front-End respondam apenas pelo **https** e não pelo **http**.
 
-## Pacotes do NuGet
+# Executando o projeto pela 1ª vez
+## Restaurando os pacotes do Back-End com o NuGet
 Antes de mais nada, restaure os pacotes que o template utiliza através do NuGet, para isso, basta abrir a solução (.sln) no Visual Studio, clicar com o botão direito do mouse na solução e acionar o comando **Restore NuGet Packages** (se você der um **Build Solution** o Visual Studio também irá restaurar os pacotes).
 
 <img src="images/Restore-NuGet-Packages.png">
 
 **ATENÇÃO:** É recomendado que após restaurar os pacotes, feche-se a Solução/Visual Studio e abra novamente! (Thank you Microsoft!)
+
+## Instalando e restaurando os pacotes do Front-End com o NPM
+A execução do <strong>Front-End</strong> pode ser realizada através do próprio Visual Studio (junto com o Bakc-End), porém, é recomendável que se execute o Front-End através do <strong>NodeJs + gulp</strong>, para isso siga os passos abaixo:
+1. Na linha de comando, instale o [gulp](https://gulpjs.com/) no modo global através do [NPM](https://docs.npmjs.com/getting-started/what-is-npm):
+```
+npm i -g gulp-cli
+```
+<strong>IMPORTANTE:</strong>
+   - Para executar o NPM você deve ter o mesmo instalado, conforme indicado [aqui](README.md) na seção <strong>Ferramentas para desenvolvimento</strong>.
+   - O passo 1 deve ser executado uma única vez em sua máquina de desenvolvimento, somente se você ainda não tiver o gulp instalado no modo global.
+
+<br>
+2. Na linha de comando, instale os pacotes do NPM utilizados no Front-End:
+
+```
+npm install
+```
+
+<strong>IMPORTANTE:</strong> O passo 2 deve ser executado uma única vez ao realizar o setup de um novo projeto (sempre que iniciar o desenvolvimento de um novo projeto em sua máquina de desenvolvimento).
+
 
 ## Modos: Protótipo x Desenvolvimento
 O template possui dois modos: **Protótipo (Prototype)** e **Desenvolvimento**:
@@ -112,3 +133,21 @@ Como mencionado anteriormente, por padrão a solução vem configurada para o mo
 
 Com a aprovação do protótipo e início do desenvolvimento do sistema como um todo, será necessário programar também o **Back-End** (APIs e acesso a banco de dados), quando chegar neste momento você precisará iniciar os dois projetos e principalmente realizar o setup do banco de dados.
 Para realizar o setup do banco de dados, primeiramente você deverá decidir sobre qual o mecanismo você utilizará para controlar a versão do banco de dados, [clique aqui](DataBase-Version-Control.md) e leia a documentação que explica os possíveis métodos de controle de versão (**Migrations** e **Project Database**) e como realizar o setup do banco de dados.
+
+## Executando os projetos Back-End e Front-End
+Execução do Back-End:
+1. Abra o projeto no Visual Studio.
+2. Configure o projeto <strong>\*.Api</strong> para ser executado, clicando com o botão direito do mouse em cima do nome do projeto e <strong>*.Api</strong> e acionando a opção <strong>Set as StartUp Project</strong>.
+3. Execute o projeto no Visual Studio acionando a tecla <strong>F5</strong>.
+
+Execução do Front-End:
+
+1. Na linha de comando, execute o comando:
+```
+gulp
+```
+<strong>IMPORTANTE:</strong> O comando gulp realizará diversas tarefas automaticamente, tais como:
+- Converter os dicionários de idioma do formato texto para o formato .json. Saiba mais sobre isso [clicando aqui](Dictionary.md).
+- Levantar o Front-End através de um servidor escrito em NodeJs com o componente BrowserSync, no endereço http://localhost:8080.
+
+
