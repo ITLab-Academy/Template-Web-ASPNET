@@ -62,8 +62,8 @@ Antes de mais nada, restaure os pacotes que o template utiliza através do NuGet
 **ATENÇÃO:** É recomendado que após restaurar os pacotes, feche-se a Solução/Visual Studio e abra novamente! (Thank you Microsoft!)
 
 ## Instalando e restaurando os pacotes do Front-End com o NPM
-A execução do <strong>Front-End</strong> pode ser realizada através do próprio Visual Studio (junto com o Bakc-End), porém, é recomendável que se execute o Front-End através do <strong>NodeJs + gulp</strong>, para isso siga os passos abaixo:
-1. Na linha de comando, instale o [gulp](https://gulpjs.com/) no modo global através do [NPM](https://docs.npmjs.com/getting-started/what-is-npm):
+A execução do <strong>Front-End</strong> pode ser realizada através do próprio Visual Studio (junto com o Back-End), porém, é recomendável que se execute o Front-End através do <strong>NodeJs + gulp</strong>, para isso siga os passos abaixo:
+<br>1. Na linha de comando, instale o [gulp](https://gulpjs.com/) no modo global através do [NPM](https://docs.npmjs.com/getting-started/what-is-npm):
 ```
 npm i -g gulp-cli
 ```
@@ -71,8 +71,7 @@ npm i -g gulp-cli
    - Para executar o NPM você deve ter o mesmo instalado, conforme indicado [aqui](README.md) na seção <strong>Ferramentas para desenvolvimento</strong>.
    - O passo 1 deve ser executado uma única vez em sua máquina de desenvolvimento, somente se você ainda não tiver o gulp instalado no modo global.
 
-<br>
-2. Na linha de comando, instale os pacotes do NPM utilizados no Front-End:
+<br>. Na linha de comando, instale os pacotes do NPM utilizados no Front-End:
 
 ```
 npm install
@@ -104,7 +103,7 @@ Por padrão a solução vem configurada para o modo **Protótipo**, veja abaixo 
 ```html
 <script src="app/core/services/authentication.service.prototype.js"></script> <!-- Serviço/Funções responsável pela autenticação do usuário e informações sobre sua autenticação -->
 <script src="app/core/services/commons.service.prototype.js"></script> <!-- Serviços/Funções comuns a maioria das funcionalidades do sistema -->
-<script src="app/core/pages/notifications/list.service.prototype.js"></script> <!-- Serviço que prove as notificações ao usuário -->
+<script src="app/pages/notifications/list.service.prototype.js"></script> <!-- Serviço que prove as notificações ao usuário -->
 ```
 2. Arquivo `/app/app.route.js`, neste arquivo você pode configurar o modo **Protótipo** x **Desenvolvimento** por funcionalidade, referenciando o arquivo com sufixo (`.service.prototype.js`) ou sem o sufixo (`.service.js`), por exemplo: no trecho abaixo, responsável pela tela de edição de usuários, estamos utilizando no modo **Protótipo**: 
 ```javascript 

@@ -1,6 +1,6 @@
 # Template Web ASP NET IT Lab
 Repositório utilizado para documentar o Template Web ASP NET da IT Lab.
-Versão atual do template: 3.0 (03/Janeiro/2018).
+Versão atual do template: **3.0 (03/Janeiro/2018)**.
 
 # 1ª vez neste repositório?
 Clique [Aqui](Welcome.md) e leia as orientações para os iniciantes neste repositório.
@@ -41,6 +41,9 @@ Para criar um novo projeto baseado no template, siga os passos indicados no guia
 
 # Controle de versão do banco de dados
 Para realizar o controle de versão do banco de dados, opte por um dos métodos indicados [aqui](DataBase-Version-Control.md).
+
+# Configuração de rotas e menu
+Para configurar as rotas e menu, leia o guia clicando [aqui](Rota-Menu.md).
 
 # Tradução dos termos exibidos pelo sistema
 Para criar novos termos e suas traduções e/ou alterar a tradução de termos existentes, leia o guia clicando [aqui](Dictionary.md).
