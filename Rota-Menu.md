@@ -84,3 +84,5 @@ angular
     <script src="app/routes/security.js"></script>
     <script src="app/routes/settings.js"></script>
 ```
+
+**Observação:** Ao criar um item para ser exibido no menu, atente-se para o parâmetro **roles**, caso você defina uma role e o usuário ainda não tenha acesso a role definida, o item não será exibido no menu.

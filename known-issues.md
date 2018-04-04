@@ -109,3 +109,11 @@ Inclua o trecho de código abaixo:
 Após alterar o Enconding do arquivo, abra-o novamente e ajuste o texto, re-escreva o texto com acentuação.
 
 <br><strong>IMPORTANTE:</strong> Este problema não era do template em si mas do gerador do novo projeto à partir do template, projetos gerados antes do dia 09/Janeiro/2018 podem apresentar este problema (o gerador de projetos foi ajustado no dia 08/Janeiro/2018).
+
+**8. Item não é exibido no menu.**
+
+**Sintoma:** Após criar um item no menu, o mesmo não é exibido.
+
+**Causa:** Falta de permissão para o usuário.
+
+**Solução:** Verifique se na configuração do item de menu (no arquivo que estiver na pasta **\*.Web\app\routes\\**) o item de menu possui o parâmetro **role** configurado, se tiver, verifique se o usuário que está acessando a aplicação já possui permissão à role configurada neste parâmetro, caso não tenha, o item de menu não será exibido.
