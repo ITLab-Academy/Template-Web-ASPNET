@@ -71,7 +71,7 @@ npm i -g gulp-cli
    - Para executar o NPM você deve ter o mesmo instalado, conforme indicado [aqui](README.md) na seção <strong>Ferramentas para desenvolvimento</strong>.
    - O passo 1 deve ser executado uma única vez em sua máquina de desenvolvimento, somente se você ainda não tiver o gulp instalado no modo global.
 
-<br>Na linha de comando, vá até a pasta que armazena o Front-End (<nome-projeto>.Web - onde está localizado o arquivo **package.json**) e instale os pacotes do NPM utilizados no Front-End:
+<br>Na linha de comando, vá até a pasta que armazena o Front-End (\<nome-projeto\>.Web - onde está localizado o arquivo **package.json**) e instale os pacotes do NPM utilizados no Front-End:
 
 ```
 npm install
