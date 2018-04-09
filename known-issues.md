@@ -38,10 +38,10 @@ Error: listen EACCES 0.0.0.0:8080
 A. Verifique se a solução no Visual Studio está executando, além do Back-End, também o Front-End, caso esteja, configure para o Visual Studio executar apenas o Back-End, uma vez que o Front-End é recomendável que se execute através do **NodeJs + gulp**.
 
 B. Verifique se algum outro site ou serviço não está ocupando a mesma porta que o Front-End está configurado para ser executado (por padrão, porta 8080).
-
-
 <br>
+
 ## 2. Browsers/Navegadores
+
 <strong>2.1. Problemas ao executar o sistema no browser Safari no iPad/iPhone</strong>
 
 <strong>Sintoma:</strong> Ao executar o sistema no browser Safari no iPad/iPhone o mesmo não é executado corretamente, podendo apresentar a mensagem abaixo no lugar das mensagens provindas do dicionário (ex: labels):
