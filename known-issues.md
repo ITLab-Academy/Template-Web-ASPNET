@@ -1,6 +1,6 @@
 # Lista dos problemas conhecidos ao realizar o desenvolvimento com o Template Web ASP NET API
-## Abertura da Solução/Projeto
-<strong>1. Ao abrir a solução tenho a mensagem de erro abaixo: (SQL Server Express)</strong>
+## 1. Abertura e Execução da Solução/Projeto
+<strong>1.1 Ao abrir a solução tenho a mensagem de erro abaixo: (SQL Server Express)</strong>
 <br><img src="images/error-sql-server-express-missing.png">
 
 <strong>Causa:</strong> Falta do SQL Server Express 2016 na máquina do desenvolvedor.
@@ -8,7 +8,7 @@
 <strong>Solução:</strong> Instale o SQL Server Express 2016 (ou superior) https://www.microsoft.com/en-us/download/details.aspx?id=54284
 
 <br><br>
-<strong>2. Ao abrir a solução, tenho a mensagem de erro abaixo: (SSDT)</strong>
+<strong>1.2. Ao abrir a solução, tenho a mensagem de erro abaixo: (SSDT)</strong>
 <br><img src="images/error-ssdt-missing.png">
 
 <strong>Causa:</strong> Falta do SSDT (SQL Server Data Tools) na máquina do desenvolvedor.
@@ -16,13 +16,33 @@
 <strong>Solução:</strong> Instale o SSDT na máquina do desenvolvedor. https://docs.microsoft.com/pt-br/sql/ssdt/download-sql-server-data-tools-ssdt
 
 <br><br>
-<strong>3. Após abrir a solução, um ou mais projetos ficam marcados com o erro <strong>(load failed)</strong> ao lado do nome da solução e com isso o projeto não abre.</strong>
+<strong>1.3. Após abrir a solução, um ou mais projetos ficam marcados com o erro <strong>(load failed)</strong> ao lado do nome da solução e com isso o projeto não abre.</strong>
 <br><strong>Causa:</strong> Falta do SSDT (SQL Server Data Tools) e/ou SQL Server Express 2016.
 
 <strong>Solução:</strong> Instale o SSDTe SQL Server Express 2016 na máquina do desenvolvedor.
 
-## Browsers/Navegadores
-<strong>4. Problemas ao executar o sistema no browser Safari no iPad/iPhone</strong>
+<br><br>
+**1.4. Erro ao tentar executar o Front-End**
+
+**Sintoma:** Ao tentar executar o Front-End através do **NodeJs + gulp**, a mensagem de erro abaixo é exibida no console e o Front-End não é executado.
+
+```html
+Error: listen EACCES 0.0.0.0:8080
+```
+<img src="images/error-port-in-use.png">
+
+**Causa:** Um outro site/sistema/serviço está sendo executado na mesma porta que o Front-End está configurado para ser executado (por padrão, porta 8080).
+
+**Solução:**
+
+A. Verifique se a solução no Visual Studio está executando, além do Back-End, também o Front-End, caso esteja, configure para o Visual Studio executar apenas o Back-End, uma vez que o Front-End é recomendável que se execute através do **NodeJs + gulp**.
+
+B. Verifique se algum outro site ou serviço não está ocupando a mesma porta que o Front-End está configurado para ser executado (por padrão, porta 8080).
+
+
+<br>
+## 2. Browsers/Navegadores
+<strong>2.1. Problemas ao executar o sistema no browser Safari no iPad/iPhone</strong>
 
 <strong>Sintoma:</strong> Ao executar o sistema no browser Safari no iPad/iPhone o mesmo não é executado corretamente, podendo apresentar a mensagem abaixo no lugar das mensagens provindas do dicionário (ex: labels):
 ```html
@@ -39,7 +59,7 @@ SyntaxError: Unexpected keyword 'const'. Const declarations are not supported in
 <br><strong>IMPORTANTE:</strong> O Template Web da IT Lab à partir da versão 2.1 já não utiliza mais a keyword 'const' no Javascript, as versões anteriores do template podem apresentar este problema, neste caso basta aplicar a solução descrita acima.
 
 <br><br>
-<strong>5. Problemas ao executar o sistema no browser Internet Explorer 11 (IE 11) no modo protótipo</strong>
+<strong>2.2. Problemas ao executar o sistema no browser Internet Explorer 11 (IE 11) no modo protótipo</strong>
 
 <strong>Sintoma:</strong> Ao executar o sistema no browser Internet Explorer 11 no modo protótipo a autenticação não ocorre, podendo deixar a tela congelada e apresentar a seguinte mensagem de erro no console do Developer Tools do browser:
 <br><img src="images/known-issues-ie11-authentication.png">
@@ -78,7 +98,7 @@ Pelo trecho de código:
 <br><strong>IMPORTANTE:</strong> O Template Web da IT Lab à partir da versão 2.4 já traz esta correção, as versões anteriores do template podem apresentar este problema, neste caso basta aplicar a solução descrita acima.
 
 <br><br>
-<strong>6. Dados não são atualizados na tela após cadastrar ou alterar um registro utilizando o browser Internet Explorer 11 (IE 11).</strong>
+<strong>2.3. Dados não são atualizados na tela após cadastrar ou alterar um registro utilizando o browser Internet Explorer 11 (IE 11).</strong>
 
 <strong>Sintoma:</strong> Ao cadastrar ou alterar um registro, utilizando o browser Internet Explorer 11, os dados não são atualizados na tela, mesmo após acionar o F5 do browser.
 
@@ -98,8 +118,8 @@ Inclua o trecho de código abaixo:
 ```
 <br><strong>IMPORTANTE:</strong> O Template Web da IT Lab à partir da versão 2.4 já traz esta correção, as versões anteriores do template podem apresentar este problema, neste caso basta aplicar a solução descrita acima.
 
-## Problemas em geral
-**7. Caracteres acentuados com problemas.**
+## 3. Problemas em geral
+**3.1. Caracteres acentuados com problemas.**
 
 **Sintoma:** Os caracteres acentuados não são exibidos ou são exibidos caracteres estranhos no lugar do acentuados.
 

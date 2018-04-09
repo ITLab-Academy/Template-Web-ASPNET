@@ -63,7 +63,7 @@ Antes de mais nada, restaure os pacotes que o template utiliza através do NuGet
 
 ## Instalando e restaurando os pacotes do Front-End com o NPM
 A execução do <strong>Front-End</strong> pode ser realizada através do próprio Visual Studio (junto com o Back-End), porém, é recomendável que se execute o Front-End através do <strong>NodeJs + gulp</strong>, para isso siga os passos abaixo:
-<br>1. Na linha de comando, instale o [gulp](https://gulpjs.com/) no modo global através do [NPM](https://docs.npmjs.com/getting-started/what-is-npm):
+<br><br>1. Na linha de comando, instale o [gulp](https://gulpjs.com/) no modo global através do [NPM](https://docs.npmjs.com/getting-started/what-is-npm):
 ```
 npm i -g gulp-cli
 ```
