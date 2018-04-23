@@ -1,7 +1,7 @@
 # Configurações de Rotas e Menu
 
 As rotas e itens do menu são configurados juntos nos arquivos *.js que ficam na pasta **\*.Web\app\routes\\**.
-Nesta pasta há um arquivo .js de configuração cada módulo do sistema (a sepação em arquivos diferentes é apenas para efeito de organização).
+Nesta pasta há um arquivo .js de configuração para cada módulo do sistema (a sepação em arquivos diferentes é apenas para efeito de organização).
 
 O arquivo **core.js** possui a configuração das rotas básicas do sistema, tais como rotas para as páginas de erro e home (página inicial), recomenda-se que evite alterar este arquivo.
 
@@ -16,7 +16,15 @@ angular
     .config(['$navigationProvider', 'rolesEnum', function (nav, roles) {
         nav.map([
             {
-                //Item agrupador de outros itens de menu (não é rota)
+                //Item de menu (é uma rota e é exibido no menu na raiz do menu)
+                name: 'home',
+                title: 'nav.home',
+                icon: 'home',
+                nav: 'root',
+                order: 0
+            },            
+            {
+                //Item agrupador (pai) de outros itens de menu (não é rota)
                 name: 'management',
                 title: 'nav.manager',
                 icon: 'briefcase',
