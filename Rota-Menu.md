@@ -18,8 +18,12 @@ angular
             {
                 //Item de menu (é uma rota e é exibido no menu na raiz do menu)
                 name: 'home',
+                route: '/home',
                 title: 'nav.home',
                 icon: 'home',
+                template: 'app/pages/home/list.html',
+                controller: 'homeController',
+                bundle: ['app/pages/home/list.controller.js'],                
                 nav: 'root',
                 order: 0
             },            
