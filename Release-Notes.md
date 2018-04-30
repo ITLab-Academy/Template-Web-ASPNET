@@ -1,5 +1,9 @@
 # Release Notes
 
+## Versão 3.2 (30/Abril/2018)
+- Correção na exibição do logo no topo do menu lateral esquerdo.
+- Correção no menu para permitir que um item que estiver na raiz/root do menu tenha link direto para rota.
+
 ## Versão 3.0 (03/Janeiro/2018)
 - Reorganização de pastas e arquivos no projeto Front-End.
 - Unificação da configuração de rotas e menu em um único arquivo de configuração (pasta: **\*.Web\app\routes**).
