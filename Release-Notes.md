@@ -1,6 +1,7 @@
 # Release Notes
 
-## Versão 3.2 (30/Abril/2018)
+## Versão 4.0 (02/Maio/2018)
+- Front-End como WebSite e não mais Projeto (evita gerar /bin no deploy do Front-End).
 - Correção na exibição do logo no topo do menu lateral esquerdo.
 - Correção no menu para permitir que um item que estiver na raiz/root do menu tenha link direto para rota.
 

@@ -21,11 +21,11 @@ Se preferir, agora você já pode incluir/mover este código-fonte gerado (da pa
 
 ## Entenda a solução criada
 Antes de continuarmos, vamos entender como a solução está estruturada, na pasta criada com o código-fonte da sua nova solução, temos a solução (.sln) com os seguintes projetos:
-<br><img src="images/template-solution.jpg">
+<br><img src="images/template-solution.png">
 <br>
 1. **\<nome-projeto>.Api**: Este projeto contém o código .NET (C#) das APIs (Back-End), é neste projeto que se implementa as regras de negócio e persistência no banco de dados.
 
-2. **\<nome-projeto>.Web**: Este projeto contém o código HTML/CSS/JavaScript (Front-End), é neste projeto que se implementa as telas e componentes visuais do sistema.
+2. **\<nome-projeto>.Web**: Este WebSite contém o código HTML/CSS/JavaScript (Front-End), é neste WebSite que se implementa as telas e componentes visuais do sistema.
 
 3. **\<nome-projeto>.Api.Tests**: Este projeto contém o código .NET (C#) de testes do código do projeto ITLabTemplate.Api (Back-End).
 
@@ -62,7 +62,7 @@ Antes de mais nada, restaure os pacotes que o template utiliza através do NuGet
 **ATENÇÃO:** É recomendado que após restaurar os pacotes, feche-se a Solução/Visual Studio e abra novamente! (Thank you Microsoft!)
 
 ## Instalando e restaurando os pacotes do Front-End com o NPM
-A execução do <strong>Front-End</strong> pode ser realizada através do próprio Visual Studio (junto com o Back-End), porém, é recomendável que se execute o Front-End através do <strong>NodeJs + gulp</strong>, para isso siga os passos abaixo:
+A execução do <strong>Front-End</strong> pode ser realizada através do próprio Visual Studio (junto com o Back-End), porém, é EXTREMAMENTE RECOMENDÁVEL que se execute o Front-End através do <strong>NodeJs + gulp</strong>, para isso siga os passos abaixo:
 <br><br>1. Na linha de comando, instale o [gulp](https://gulpjs.com/) no modo global através do [NPM](https://docs.npmjs.com/getting-started/what-is-npm):
 ```
 npm i -g gulp-cli
@@ -77,7 +77,12 @@ npm i -g gulp-cli
 npm install
 ```
 
-<strong>IMPORTANTE:</strong> O passo 2 deve ser executado uma única vez ao realizar o setup de um novo projeto (sempre que iniciar o desenvolvimento de um novo projeto em sua máquina de desenvolvimento).
+<strong>IMPORTANTE:</strong>
+- O passo 2 deve ser executado uma única vez ao realizar o setup de um novo projeto (sempre que iniciar o desenvolvimento de um novo projeto em sua máquina de desenvolvimento).
+- Execução do Front-End (Visual Studio x NodeJs):
+  - A execução do Front-End através do Visual Studio está configurada para o End-Point http://localhost:58925.
+  - A execução do Front-End através do NodeJs está configurada para o End-Point http://localhost:8080.
+- O [CORS](https://pt.wikipedia.org/wiki/Cross-origin_resource_sharing) vem configurado no template permitindo o acesso para todos os servidores às APIs (AllowedOrigin = *), isso para facilitar o processo de desenvolvimento, porém, ao fazer o deploy no ambiente de **PRODUÇÃO** especifique o servidor que poderá acessar os recursos da API, configurando o AllowedOrigin.
 
 
 ## Modos: Protótipo x Desenvolvimento
