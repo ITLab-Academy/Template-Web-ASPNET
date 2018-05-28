@@ -110,22 +110,22 @@ Por padrão a solução vem configurada para o modo **Protótipo**, veja abaixo 
 <script src="app/core/services/commons.service.prototype.js"></script> <!-- Serviços/Funções comuns a maioria das funcionalidades do sistema -->
 <script src="app/pages/notifications/list.service.prototype.js"></script> <!-- Serviço que prove as notificações ao usuário -->
 ```
-2. Arquivo `/app/app.route.js`, neste arquivo você pode configurar o modo **Protótipo** x **Desenvolvimento** por funcionalidade, referenciando o arquivo com sufixo (`.service.prototype.js`) ou sem o sufixo (`.service.js`), por exemplo: no trecho abaixo, responsável pela tela de edição de usuários, estamos utilizando no modo **Protótipo**: 
+2. Nos arquivos da pasta `/app/route` temos os arquivos para configuração das rotas, nestes arquivos você pode configurar o modo **Protótipo** x **Desenvolvimento** por funcionalidade, referenciando o arquivo com sufixo (`.service.prototype.js`) ou sem o sufixo (`.service.js`), por exemplo: no trecho abaixo do arquivo `/app/route/security.js`, responsável pela tela de edição de usuários, estamos utilizando no modo **Protótipo**: 
 ```javascript 
-files: [
-    'app/core/pages/dataVisibility/crud.service.prototype.js',  //COM o sufixo .service.prototype.js
-    'app/core/pages/security/user/service.prototype.js',        //COM o sufixo .service.prototype.js
-    'app/core/pages/security/user/edit.controller.js',
-]
+bundle: [
+    'app/pages/countries/crud.service.prototype.js',    //COM o sufixo .service.prototype.js
+    'app/pages/users/service.prototype.js',             //COM o sufixo .service.prototype.js
+    'app/pages/users/list.controller.js'
+],
 ```
 Já no trecho abaixo, responsável pelo cadastro de novos usuários, estamos utilizando no modo **Desenvolvimento**:
 ```javascript
-files: [
-    'app/core/pages/dataVisibility/crud.service.js',    //SEM o sufixo .service.prototype.js
-    'app/core/pages/generalSettings/edit.service.js',   //SEM o sufixo .service.prototype.js
-    'app/core/pages/security/user/service.js',          //SEM o sufixo .service.prototype.js
-    'app/core/pages/security/user/new.controller.js',
-]
+bundle: [
+    'app/pages/countries/crud.service.js',          //SEM o sufixo .service.prototype.js
+    'app/pages/settings/general.service.js',        //SEM o sufixo .service.prototype.js
+    'app/pages/users/service.js',                   //SEM o sufixo .service.prototype.js
+    'app/pages/users/new.controller.js'
+],
 ```
 
 **IMPORTANTE:** Caso o serviço de autenticação referenciado seja o modo **Protótipo**, todas as demais funcionalidades também devem utilizar os serviços no modo **Protótipo**, caso contrário você terá erro de não autenticado/sem permissão ao acionar as APIs do Back-End.
@@ -133,7 +133,7 @@ files: [
 <script src="app/core/services/authentication.service.prototype.js"></script> <!-- Serviço/Funções responsável pela autenticação do usuário e informações sobre sua autenticação -->
 ```
 
-Como mencionado anteriormente, por padrão a solução vem configurada para o modo **Protótipo**, desta forma você já conseguirá construir o protótipo do novo sistema utilizando HTML/CSS/Javascript (Telas / **Front-End**), sem a necessidade de ter um **Back-End** (APIs e acesso a banco de dados), para isso basta iniciar apenas o projeto **\*.Web** (botão direito do mouse em cima do nome do projeto > Set as StartUp Project), neste momento não é necessário iniciar o projeto **\*.Api**.
+Como mencionado anteriormente, por padrão a solução vem configurada para o modo **Protótipo**, desta forma você já conseguirá construir o protótipo do novo sistema utilizando HTML/CSS/Javascript (Telas / **Front-End**), sem a necessidade de ter um **Back-End** (APIs e acesso a banco de dados), para isso basta iniciar apenas o projeto **\*.Web** (digitar `gulp` na linha de comando estando na pasta do projeto **\*.Web**), neste momento não é necessário iniciar o projeto **\*.Api**.
 
 Com a aprovação do protótipo e início do desenvolvimento do sistema como um todo, será necessário programar também o **Back-End** (APIs e acesso a banco de dados), quando chegar neste momento você precisará iniciar os dois projetos e principalmente realizar o setup do banco de dados.
 Para realizar o setup do banco de dados, primeiramente você deverá decidir sobre qual o mecanismo você utilizará para controlar a versão do banco de dados, [clique aqui](DataBase-Version-Control.md) e leia a documentação que explica os possíveis métodos de controle de versão (**Migrations** e **Project Database**) e como realizar o setup do banco de dados.
@@ -146,7 +146,8 @@ Execução do Back-End:
 
 Execução do Front-End:
 
-1. Na linha de comando, execute o comando:
+1. Na linha de comando, navegue até a pasta do projeto **\*.Web**.
+2. Execute o comando:
 ```
 gulp
 ```
