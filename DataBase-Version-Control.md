@@ -65,11 +65,15 @@ Para criar um novo banco de dados utilizando o Migrations, siga os passos abaixo
     Para este passo-a-passo, como vamos alterar a estrutura do banco de dados (criar tabelas), vamos utilizar a string de conexão que utiliza o usuário autenticado no Windows para se conectar no SQL, nesta string de conexão defina o nome do servidor/instância SQL (Data Source) e o nome do banco de dados (Initial Catalog). Caso você possua um usuário/senha do SQL com permissões para alterar a estrutura do banco de dados, pode-se utilizar a outra string de conexão.
 
 2. Abra o **Package Manager Console** (Tools > NuGet Package Manager > Package Manager Console).
-3. No **Package Manager Console** digite o comando:
+3. No **Package Manager Console**:
+  
+    3.1. Selecione o **Default Project** o projeto **<nome-projeto>.Api**.
+  
+    3.2. Digite o comando:
 ```bash
 update-database -StartUpProjectName <nome-projeto>.Api -verbose
 ```
-    O comando acimaexecutará contra o banco de dados os scripts SQL gerados pelo **Migrations** do projeto **\*.Api**, exibindo no console o andamento e scripts que estão sendo executandos (-verbose). Caso o banco de dados não exista, o **Migrations** irá criá-lo automaticamente.
+    O comando acima executará contra o banco de dados os scripts SQL gerados pelo **Migrations** do projeto **\*.Api**, exibindo no console o andamento e scripts que estão sendo executandos (-verbose). Caso o banco de dados não exista, o **Migrations** irá criá-lo automaticamente.
   
   Como mencionado anteriormente, os scripts SQL serão gerados automaticamente pelo **Migrations** à partir do código C#, neste primeiro momento ele executará apenas os dois **Migrations** que já vem com o template, na ordem abaixo:
   - Arquivo **XXXXX_Initialize-Database.cs**: Cria os objetos SQL iniciais.
@@ -77,6 +81,12 @@ update-database -StartUpProjectName <nome-projeto>.Api -verbose
   - Arquivo **Seed.cs**: Alimenta as tabelas com dados iniciais.
   
   **IMPORTANTE**: Os **Migrations** são executados na ordem em que foram criados, pode-se ver isso através da data e hora, em que foram criados, que é o prefixo do nome dos arquivos mencionados acima, por último é executado o arquivo **Seed.cs**.
+
+### Restaurar o banco de dados ao estado inicial
+Para restaurar o banco de dados ao estado inicial, ou seja, da forma como ele estava antes de aplicar os scripts do **Migrations**, execute o comando abaixo no **Package Manager Console**:
+```bash
+update-database -StartUpProjectName <nome-projeto>.Api -TargetMigration:0 -verbose
+```
 
 ### Como criar e versionar uma mudança no banco de dados
 Ao utilizar o **Migrations** para controlar a versão do banco de dados, qualquer mudança na estrutura de tabelas do banco de dados **NÃO DEVE** ser realizada diretamente no SQL Server, a mudança deve ser feita no código C# (Entidades e Mapeamento) e o **Migrations** entenderá a mudança e criará o script SQL para alterar a estrutura das tabelas.
