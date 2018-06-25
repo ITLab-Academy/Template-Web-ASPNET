@@ -73,7 +73,7 @@ Para criar um novo banco de dados utilizando o Migrations, siga os passos abaixo
 ```bash
 update-database -StartUpProjectName <nome-projeto>.Api -verbose
 ```
-    O comando acima executará contra o banco de dados os scripts SQL gerados pelo **Migrations** do projeto **\*.Api**, exibindo no console o andamento e scripts que estão sendo executandos (-verbose). Caso o banco de dados não exista, o **Migrations** irá criá-lo automaticamente.
+O comando acima executará contra o banco de dados os scripts SQL gerados pelo **Migrations** do projeto **\*.Api**, exibindo no console o andamento e scripts que estão sendo executandos (-verbose). Caso o banco de dados não exista, o **Migrations** irá criá-lo automaticamente.
   
   Como mencionado anteriormente, os scripts SQL serão gerados automaticamente pelo **Migrations** à partir do código C#, neste primeiro momento ele executará apenas os dois **Migrations** que já vem com o template, na ordem abaixo:
   - Arquivo **XXXXX_Initialize-Database.cs**: Cria os objetos SQL iniciais.
