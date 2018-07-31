@@ -21,18 +21,17 @@ Se preferir, agora você já pode incluir/mover este código-fonte gerado (da pa
 
 ## Entenda a solução criada
 Antes de continuarmos, vamos entender como a solução está estruturada, na pasta criada com o código-fonte da sua nova solução, temos a solução (.sln) com os seguintes projetos:
-<br><img src="images/template-solution.jpg">
+<br><img src="images/template-solution.png">
 <br>
 1. **\<nome-projeto>.Api**: Este projeto contém o código .NET (C#) das APIs (Back-End), é neste projeto que se implementa as regras de negócio e persistência no banco de dados.
 
-2. **\<nome-projeto>.Web**: Este projeto contém o código HTML/CSS/JavaScript (Front-End), é neste projeto que se implementa as telas e componentes visuais do sistema.
+2. **\<nome-projeto>.Web**: Este WebSite contém o código HTML/CSS/JavaScript (Front-End), é neste WebSite que se implementa as telas e componentes visuais do sistema.
 
 3. **\<nome-projeto>.Api.Tests**: Este projeto contém o código .NET (C#) de testes do código do projeto ITLabTemplate.Api (Back-End).
 
 4. **\<nome-projeto>.Database**: Este projeto contém os scripts [T-SQL](https://pt.wikipedia.org/wiki/Transact-SQL) do projeto, tais como para criação das tabelas no SQL Server.
 Através deste projeto você pode manter o controle de versão para todos os seus objetos do SQL Server, tais como: Tabelas, Stored Procedures e Views.
 <br>Também é recomendado que você mantenha neste projeto os scripts [T-SQL](https://pt.wikipedia.org/wiki/Transact-SQL) de alteração de banco de dados para cada nova versão, isso facilitará o deploy para cada versão da aplicação.
-
 
 ## Possíveis cenários para execução do sistema
 Da forma como a solução está estruturada, temos dois possíveis cenários para executar o sistema:
@@ -54,12 +53,37 @@ Da forma como a solução está estruturada, temos dois possíveis cenários par
     - **Back-End**: End-Point http://localhost:8081 
 - Por questões de segurança, no **AMBIENTE DE PRODUÇÃO**, é recomendado que o Back-End e Front-End respondam apenas pelo **https** e não pelo **http**.
 
-## Pacotes do NuGet
+# Executando o projeto pela 1ª vez
+## Restaurando os pacotes do Back-End com o NuGet
 Antes de mais nada, restaure os pacotes que o template utiliza através do NuGet, para isso, basta abrir a solução (.sln) no Visual Studio, clicar com o botão direito do mouse na solução e acionar o comando **Restore NuGet Packages** (se você der um **Build Solution** o Visual Studio também irá restaurar os pacotes).
 
 <img src="images/Restore-NuGet-Packages.png">
 
 **ATENÇÃO:** É recomendado que após restaurar os pacotes, feche-se a Solução/Visual Studio e abra novamente! (Thank you Microsoft!)
+
+## Instalando e restaurando os pacotes do Front-End com o NPM
+A execução do <strong>Front-End</strong> pode ser realizada através do próprio Visual Studio (junto com o Back-End), porém, é EXTREMAMENTE RECOMENDÁVEL que se execute o Front-End através do <strong>NodeJs + gulp</strong>, para isso siga os passos abaixo:
+<br><br>1. Na linha de comando, instale o [gulp](https://gulpjs.com/) no modo global através do [NPM](https://docs.npmjs.com/getting-started/what-is-npm):
+```
+npm i -g gulp-cli
+```
+<strong>IMPORTANTE:</strong>
+   - Para executar o NPM você deve ter o mesmo instalado, conforme indicado [aqui](README.md) na seção <strong>Ferramentas para desenvolvimento</strong>.
+   - O passo 1 deve ser executado uma única vez em sua máquina de desenvolvimento, somente se você ainda não tiver o gulp instalado no modo global.
+
+<br>2. Na linha de comando, vá até a pasta que armazena o Front-End (\<nome-projeto\>.Web - onde está localizado o arquivo **package.json**) e instale os pacotes do NPM utilizados no Front-End:
+
+```
+npm install
+```
+
+<strong>IMPORTANTE:</strong>
+- O passo 2 deve ser executado uma única vez ao realizar o setup de um novo projeto (sempre que iniciar o desenvolvimento de um novo projeto em sua máquina de desenvolvimento).
+- Execução do Front-End (Visual Studio x NodeJs):
+  - A execução do Front-End através do Visual Studio está configurada para o End-Point http://localhost:58925.
+  - A execução do Front-End através do NodeJs está configurada para o End-Point http://localhost:8080.
+- O [CORS](https://pt.wikipedia.org/wiki/Cross-origin_resource_sharing) vem configurado no template permitindo o acesso para todos os servidores às APIs (AllowedOrigin = *), isso para facilitar o processo de desenvolvimento, porém, ao fazer o deploy no ambiente de **PRODUÇÃO** especifique o servidor que poderá acessar os recursos da API, configurando o AllowedOrigin.
+
 
 ## Modos: Protótipo x Desenvolvimento
 O template possui dois modos: **Protótipo (Prototype)** e **Desenvolvimento**:
@@ -84,24 +108,24 @@ Por padrão a solução vem configurada para o modo **Protótipo**, veja abaixo 
 ```html
 <script src="app/core/services/authentication.service.prototype.js"></script> <!-- Serviço/Funções responsável pela autenticação do usuário e informações sobre sua autenticação -->
 <script src="app/core/services/commons.service.prototype.js"></script> <!-- Serviços/Funções comuns a maioria das funcionalidades do sistema -->
-<script src="app/core/pages/notifications/list.service.prototype.js"></script> <!-- Serviço que prove as notificações ao usuário -->
+<script src="app/pages/notifications/list.service.prototype.js"></script> <!-- Serviço que prove as notificações ao usuário -->
 ```
-2. Arquivo `/app/app.route.js`, neste arquivo você pode configurar o modo **Protótipo** x **Desenvolvimento** por funcionalidade, referenciando o arquivo com sufixo (`.service.prototype.js`) ou sem o sufixo (`.service.js`), por exemplo: no trecho abaixo, responsável pela tela de edição de usuários, estamos utilizando no modo **Protótipo**: 
+2. Nos arquivos da pasta `/app/route` temos os arquivos para configuração das rotas, nestes arquivos você pode configurar o modo **Protótipo** x **Desenvolvimento** por funcionalidade, referenciando o arquivo com sufixo (`.service.prototype.js`) ou sem o sufixo (`.service.js`), por exemplo: no trecho abaixo do arquivo `/app/route/security.js`, responsável pela tela de edição de usuários, estamos utilizando no modo **Protótipo**: 
 ```javascript 
-files: [
-    'app/core/pages/dataVisibility/crud.service.prototype.js',  //COM o sufixo .service.prototype.js
-    'app/core/pages/security/user/service.prototype.js',        //COM o sufixo .service.prototype.js
-    'app/core/pages/security/user/edit.controller.js',
-]
+bundle: [
+    'app/pages/countries/crud.service.prototype.js',    //COM o sufixo .service.prototype.js
+    'app/pages/users/service.prototype.js',             //COM o sufixo .service.prototype.js
+    'app/pages/users/list.controller.js'
+],
 ```
 Já no trecho abaixo, responsável pelo cadastro de novos usuários, estamos utilizando no modo **Desenvolvimento**:
 ```javascript
-files: [
-    'app/core/pages/dataVisibility/crud.service.js',    //SEM o sufixo .service.prototype.js
-    'app/core/pages/generalSettings/edit.service.js',   //SEM o sufixo .service.prototype.js
-    'app/core/pages/security/user/service.js',          //SEM o sufixo .service.prototype.js
-    'app/core/pages/security/user/new.controller.js',
-]
+bundle: [
+    'app/pages/countries/crud.service.js',          //SEM o sufixo .service.prototype.js
+    'app/pages/settings/general.service.js',        //SEM o sufixo .service.prototype.js
+    'app/pages/users/service.js',                   //SEM o sufixo .service.prototype.js
+    'app/pages/users/new.controller.js'
+],
 ```
 
 **IMPORTANTE:** Caso o serviço de autenticação referenciado seja o modo **Protótipo**, todas as demais funcionalidades também devem utilizar os serviços no modo **Protótipo**, caso contrário você terá erro de não autenticado/sem permissão ao acionar as APIs do Back-End.
@@ -109,7 +133,26 @@ files: [
 <script src="app/core/services/authentication.service.prototype.js"></script> <!-- Serviço/Funções responsável pela autenticação do usuário e informações sobre sua autenticação -->
 ```
 
-Como mencionado anteriormente, por padrão a solução vem configurada para o modo **Protótipo**, desta forma você já conseguirá construir o protótipo do novo sistema utilizando HTML/CSS/Javascript (Telas / **Front-End**), sem a necessidade de ter um **Back-End** (APIs e acesso a banco de dados), para isso basta iniciar apenas o projeto **\*.Web** (botão direito do mouse em cima do nome do projeto > Set as StartUp Project), neste momento não é necessário iniciar o projeto **\*.Api**.
+Como mencionado anteriormente, por padrão a solução vem configurada para o modo **Protótipo**, desta forma você já conseguirá construir o protótipo do novo sistema utilizando HTML/CSS/Javascript (Telas / **Front-End**), sem a necessidade de ter um **Back-End** (APIs e acesso a banco de dados), para isso basta iniciar apenas o projeto **\*.Web** (digitar `gulp` na linha de comando estando na pasta do projeto **\*.Web**), neste momento não é necessário iniciar o projeto **\*.Api**.
 
 Com a aprovação do protótipo e início do desenvolvimento do sistema como um todo, será necessário programar também o **Back-End** (APIs e acesso a banco de dados), quando chegar neste momento você precisará iniciar os dois projetos e principalmente realizar o setup do banco de dados.
 Para realizar o setup do banco de dados, primeiramente você deverá decidir sobre qual o mecanismo você utilizará para controlar a versão do banco de dados, [clique aqui](DataBase-Version-Control.md) e leia a documentação que explica os possíveis métodos de controle de versão (**Migrations** e **Project Database**) e como realizar o setup do banco de dados.
+
+## Executando os projetos Back-End e Front-End
+Execução do Back-End:
+1. Abra o projeto no Visual Studio.
+2. Configure o projeto <strong>\*.Api</strong> para ser executado, clicando com o botão direito do mouse em cima do nome do projeto e <strong>*.Api</strong> e acionando a opção <strong>Set as StartUp Project</strong>.
+3. Execute o projeto no Visual Studio acionando a tecla <strong>F5</strong>.
+
+Execução do Front-End:
+
+1. Na linha de comando, navegue até a pasta do projeto **\*.Web**.
+2. Execute o comando:
+```
+gulp
+```
+<strong>IMPORTANTE:</strong> O comando gulp realizará diversas tarefas automaticamente, tais como:
+- Converter os dicionários de idioma do formato texto para o formato .json. Saiba mais sobre isso [clicando aqui](Dictionary.md).
+- Levantar o Front-End através de um servidor escrito em NodeJs com o componente BrowserSync, no endereço http://localhost:8080.
+
+
