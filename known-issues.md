@@ -118,6 +118,20 @@ Inclua o trecho de código abaixo:
 ```
 <br><strong>IMPORTANTE:</strong> O Template Web da IT Lab à partir da versão 2.4 já traz esta correção, as versões anteriores do template podem apresentar este problema, neste caso basta aplicar a solução descrita acima.
 
+<br><br>
+<strong>2.4. Problemas ao executar o sistema no browser Internet Explorer 11 (IE11) e Microsoft Edge.</strong>
+
+<strong>Sintoma:</strong> Ao executar o sistema no browser Internet Explorer 11 ou Microsoft Edge as telas não são exibidas por completo, quebrando o layout e componente.
+
+<strong>Causa:</strong> Dependendo do ambiente do cliente e do site que o usuário entrou antes, o navegador configura o modo de compatibilidade para IE 8 (ou menos), ao entrar no sistema ele não ajusta o modo de compatibilidade e o layout do sistema quebra, não exibindo as telas como deveria exibir.
+
+<strong>Solução:</strong> Instrua o browser a sempre utilizar o modo de compatibilidade IE=Edge.
+<br>No arquivo <strong>*.Web/index.html</strong> no bloclo *\<header>* inclua o trecho de código abaixo:
+```html
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+```
+<br><strong>IMPORTANTE:</strong> O Template Web da IT Lab à partir da versão 4.1 já traz esta correção, as versões anteriores do template podem apresentar este problema, neste caso basta aplicar a solução descrita acima.
+
 ## 3. Problemas em geral
 **3.1. Caracteres acentuados com problemas.**
 
@@ -130,10 +144,22 @@ Após alterar o Enconding do arquivo, abra-o novamente e ajuste o texto, re-escr
 
 <br><strong>IMPORTANTE:</strong> Este problema não era do template em si mas do gerador do novo projeto à partir do template, projetos gerados antes do dia 09/Janeiro/2018 podem apresentar este problema (o gerador de projetos foi ajustado no dia 08/Janeiro/2018).
 
-**8. Item não é exibido no menu.**
+**3.4. Item não é exibido no menu.**
 
 **Sintoma:** Após criar um item no menu, o mesmo não é exibido.
 
 **Causa:** Falta de permissão para o usuário.
 
 **Solução:** Verifique se na configuração do item de menu (no arquivo que estiver na pasta **\*.Web\app\routes\\**) o item de menu possui o parâmetro **role** configurado, se tiver, verifique se o usuário que está acessando a aplicação já possui permissão à role configurada neste parâmetro, caso não tenha, o item de menu não será exibido.
+
+**3.5. Sistema não exibe data selecionada no date picker.**
+
+**Sintoma:** Quando o campo de data está em branco e o usuário abre o calendário (date picker) e seleciona a data atual, o sistema fecha o calendário e não preenche o campo com a data selecionada.
+
+**Causa:** Componente originalmente é para seleção de range de data (de/até) e está sendo utilizado para seleção de data única.
+
+**Solução:** Componente foi adequado para seleção de data única, arquivos:
+- **\*.Web\public\plugins\bootstrap-daterangepicker-master\daterangepicker.js\\**.
+- **\*.Web\public\plugins\angular-daterangepicker-master\angular-daterangepicker.js\\**.
+
+<br><strong>IMPORTANTE:</strong> O Template Web da IT Lab à partir da versão 4.1 já traz esta adequação do componente, as versões anteriores do template podem apresentar este problema, neste caso basta aplicar a solução descrita acima.

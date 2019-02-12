@@ -1,5 +1,11 @@
 # Release Notes
 
+## Versão 4.1 (12/Fevereiro/2019)
+- Front-End: Forçar usar modo de compatibilidade IE=Edge.
+- Front-End: Correção de bug no componente date range picker quando utilizado como seleção de data única e o campo de data esta vazio.
+- Front-End / Back-End: Melhoria na gravação das configurações para envio de e-mail (SMTP), validando os dados antes de gravar, evitando dados inconsistentes no banco de dados.
+- Front-End / Back-End: Melhoria segurança na exibição das configurações para envio de e-mail (SMTP), evitando retornar do back-end a senha em modo plain-text.
+
 ## Versão 4.0 (02/Maio/2018)
 - Front-End como WebSite e não mais Projeto (evita gerar /bin no deploy do Front-End).
 - Correção na exibição do logo no topo do menu lateral esquerdo.
