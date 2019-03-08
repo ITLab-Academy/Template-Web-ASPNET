@@ -1,5 +1,8 @@
 # Release Notes
 
+## Versão 4.2 (08/Março/2019)
+- Nova funcionalidade que permite exportar todos os registros da grid, de todas as páginas (não só os exibidos na primeira página).
+
 ## Versão 4.1 (12/Fevereiro/2019)
 - Front-End: Forçar usar modo de compatibilidade IE=Edge.
 - Front-End: Correção de bug no componente date range picker quando utilizado como seleção de data única e o campo de data esta vazio.
