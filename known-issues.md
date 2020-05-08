@@ -38,7 +38,16 @@ Error: listen EACCES 0.0.0.0:8080
 A. Verifique se a solução no Visual Studio está executando, além do Back-End, também o Front-End, caso esteja, configure para o Visual Studio executar apenas o Back-End, uma vez que o Front-End é recomendável que se execute através do **NodeJs + gulp**.
 
 B. Verifique se algum outro site ou serviço não está ocupando a mesma porta que o Front-End está configurado para ser executado (por padrão, porta 8080).
-<br>
+
+<br><br>
+**1.5. Erro ao iniciar o Front-End**
+
+**Sintomas:** Ao executar o gulp para subir o Front-end a seguinte mensagem aparece no console:
+<img src="images/node-version.png">
+
+**Causa:** A versão do **Node** que está utilizando não é compativel com a versão do projeto
+
+**Solução:** Instalar a versão ***v8.17.0*** do **Node**, e repetir os passos de **configuração do Front-End**
 
 ## 2. Browsers/Navegadores
 
