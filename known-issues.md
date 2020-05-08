@@ -40,6 +40,12 @@ A. Verifique se a solução no Visual Studio está executando, além do Back-End
 B. Verifique se algum outro site ou serviço não está ocupando a mesma porta que o Front-End está configurado para ser executado (por padrão, porta 8080).
 <br>
 
+<br><br>
+<strong>1.5. Ao executar o gulp para subir o Front-end a seguinte mensagem aparece no console:</strong>
+<img src="images/node-version.png">
+<br><strong>Causa:</strong> A versão do Node que está utilizando não é compativel com a versão do projeto
+<strong>Solução:</strong> Instalar a versão 8.17.0 do Node, e repetir os passos de configuração do Front-End
+
 ## 2. Browsers/Navegadores
 
 <strong>2.1. Problemas ao executar o sistema no browser Safari no iPad/iPhone</strong>
