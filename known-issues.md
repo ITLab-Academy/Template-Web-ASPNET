@@ -153,7 +153,7 @@ Após alterar o Enconding do arquivo, abra-o novamente e ajuste o texto, re-escr
 
 <br><strong>IMPORTANTE:</strong> Este problema não era do template em si mas do gerador do novo projeto à partir do template, projetos gerados antes do dia 09/Janeiro/2018 podem apresentar este problema (o gerador de projetos foi ajustado no dia 08/Janeiro/2018).
 
-**3.4. Item não é exibido no menu.**
+**3.2. Item não é exibido no menu.**
 
 **Sintoma:** Após criar um item no menu, o mesmo não é exibido.
 
@@ -161,7 +161,7 @@ Após alterar o Enconding do arquivo, abra-o novamente e ajuste o texto, re-escr
 
 **Solução:** Verifique se na configuração do item de menu (no arquivo que estiver na pasta **\*.Web\app\routes\\**) o item de menu possui o parâmetro **role** configurado, se tiver, verifique se o usuário que está acessando a aplicação já possui permissão à role configurada neste parâmetro, caso não tenha, o item de menu não será exibido.
 
-**3.5. Sistema não exibe data selecionada no date picker.**
+**3.3. Sistema não exibe data selecionada no date picker.**
 
 **Sintoma:** Quando o campo de data está em branco e o usuário abre o calendário (date picker) e seleciona a data atual, o sistema fecha o calendário e não preenche o campo com a data selecionada.
 
@@ -172,3 +172,15 @@ Após alterar o Enconding do arquivo, abra-o novamente e ajuste o texto, re-escr
 - **\*.Web\public\plugins\angular-daterangepicker-master\angular-daterangepicker.js\\**.
 
 <br><strong>IMPORTANTE:</strong> O Template Web da IT Lab à partir da versão 4.1 já traz esta adequação do componente, as versões anteriores do template podem apresentar este problema, neste caso basta aplicar a solução descrita acima.
+
+**3.4. Mensagens amigáveis de erro não são exibidas no front-end no processo de autenticação.**
+
+**Sintoma:** Ao tentar se autenticar, caso ocorra algum como por exemplo: usuário não encontrado, o front-end não consegue exibir uma mensagem de erro amigável e clara sobre qual erro ocorreu.
+
+**Causa:** Uso de função **context.Rejected()** que sobrescreve o erro definido até então para ser retornado na API de autenticação.
+
+**Solução:** A API de autenticação foi ajustada para retornar o erro de maneira que o front-end possa interpretar e exibir mensagens amigáveis ao usuário com base no dicionário definido de mensagens para cada erro.
+
+<br><strong>IMPORTANTE:</strong> O Template Web da IT Lab à partir da versão 4.3 já traz este ajuste na API de autenticação, as versões anteriores do template podem apresentar este problema, neste caso basta aplicar a solução descrita acima considerando:
+- Se não foi realizada nenhuma customização na API de autenticação para o projeto existente, basta copiar o arquivo __\ITLabTemplate.Api\App_Start\Providers\ApplicationOAuthProvider.cs__ para o seu projeto, sobrescrevendo o atual (ajustando apenas a referências aos namespaces que este arquivo faz).
+- Se foi realizada alguma customização na API de autenticação para o projeto existente, avalie com atenção as alterações realizadas para a versão 4.3, através [deste commit diff](https://dev.azure.com/itlabbrasil/ITLab.TemplateWebApi/_git/ITLab.TemplateWebApi/commit/0c0fc9cc7b2f01751a3f583d6306a2cfa6bbce00?refName=refs%2Fheads%2Fmaster&path=%2FITLabTemplate.Api%2FApp_Start%2FProviders%2FApplicationOAuthProvider.cs), repare que foi retirada a chamada para a função **context.Rejected()** quando se deseja retornar algum erro.
