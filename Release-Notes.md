@@ -1,9 +1,9 @@
 # Release Notes
 
 ## Versão 4.3 (17/Junho/2021)
-- Correção na resposta do back-end para o front-end na API de authenticação (com isso as mensagens amigáveis dos erros não eram exibidas no front-end).
-- Exibição de erro amigável quando o usuário não possui o campo Security Stamp definido na tabela (quando se cria usuário direto no banco de dados, prática este desencorajada!)
-- Refatoração da API de authenticação.
+- Correção na resposta do back-end para o front-end na API de autenticação (com isso as mensagens amigáveis dos erros não eram exibidas no front-end).
+- Exibição de erro amigável quando o usuário não possui o campo Security Stamp definido na tabela (quando se cria usuário direto no banco de dados, prática esta desencorajada!)
+- Refatoração da API de autenticação.
 
 ## Versão 4.2 (08/Março/2019)
 - Nova funcionalidade que permite exportar todos os registros da grid, de todas as páginas (não só os exibidos na primeira página).
