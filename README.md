@@ -1,6 +1,6 @@
 # Template Web ASP NET IT Lab
 Repositório utilizado para documentar o Template Web ASP NET da IT Lab.
-Versão atual do template: **4.3 (17/Junho/2021)** [Release Notes](Release-Notes.md).
+Versão atual do template: **4.4 (25/Junho/2021)** [Release Notes](Release-Notes.md).
 
 # 1ª vez neste repositório?
 Clique [Aqui](Welcome.md) e leia as orientações para os iniciantes neste repositório.

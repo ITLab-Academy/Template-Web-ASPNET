@@ -1,5 +1,8 @@
 # Release Notes
 
+## Versão 4.4 (25/Junho/2021)
+- Melhoria na diretiva input-numeral, para valores monetários, melhorando a formatação visual e principalmente o formato do dado que é enviado para o back-end (formato americano, sem vírgual e com ponto para separar o decimal).
+
 ## Versão 4.3 (17/Junho/2021)
 - Correção na resposta do back-end para o front-end na API de autenticação (com isso as mensagens amigáveis dos erros não eram exibidas no front-end).
 - Exibição de erro amigável quando o usuário não possui o campo Security Stamp definido na tabela (quando se cria usuário direto no banco de dados, prática esta desencorajada!)
